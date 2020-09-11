@@ -8,8 +8,6 @@ namespace HelloWorld
     {
         public int _playerHealth;
         public string _playerName;
-        public int _playerDamage;
-        public bool dead;
     }
     class Game
     {
@@ -50,17 +48,19 @@ namespace HelloWorld
         }
         void GameEnd()
         {
-            if (player1._playerHealth <= 0)
+            if (player1._playerHealth < player2._playerHealth)
             {
                 Console.WriteLine("Player 2 Wins!!!");
+                Console.Clear();
                 return;
             }
-            else if (player2._playerHealth <= 0)
+            else if (player2._playerHealth < player1._playerHealth)
             {
                 Console.WriteLine("Player 1 Wins!!!");
+                Console.Clear();
                 return;
             }
-
+            Console.Clear();
         }
         void InitializeCharacters()
         {
